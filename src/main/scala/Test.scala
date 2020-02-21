@@ -17,6 +17,8 @@ class Test {
 
   test.printSchema()
 
+  println(test.count())
+
   test.show(false)
 
   spark.time(test.count())
