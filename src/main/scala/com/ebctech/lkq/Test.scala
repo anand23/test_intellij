@@ -1,3 +1,5 @@
+package com.ebctech.lkq
+
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.SparkSession
 
@@ -8,7 +10,7 @@ class Test {
 
   val spark: SparkSession = SparkSession.builder()
     .master("local[*]")
-    .appName("Test-Local")
+    .appName("com.ebctech.lkq.Test-Local")
     .getOrCreate
 
   val test = spark.read.format("csv")
@@ -19,11 +21,7 @@ class Test {
 
   println(test.count())
 
-  test.show(false)
-
   spark.time(test.count())
-
-  test
 
 }
 
